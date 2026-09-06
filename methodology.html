@@ -1,0 +1,80 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>The Citizen Index — Methodology</title><style>
+:root{--bg:#fbfaf8;--card:#fff;--ink:#1c1b19;--muted:#6b6a67;--line:#e7e4de;--accent:#2b4a6f}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:32px 20px 64px}
+header h1{font-size:1.5rem;margin:0 0 2px}
+.sub{color:var(--muted);font-size:.9rem}
+.disclaimer{background:#fdf6e3;border:1px solid #ecdca6;border-radius:10px;padding:10px 14px;margin:18px 0;font-size:.9rem}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:20px;margin:16px 0}
+.moodwrap{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.moodnum{font-size:3rem;font-weight:700;line-height:1}
+.badge{display:inline-block;font-size:.72rem;font-weight:600;color:#fff;border-radius:999px;padding:2px 9px;vertical-align:middle}
+.tag{display:inline-block;font-size:.68rem;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:1px 7px;margin-left:6px}
+h2{font-size:1.05rem;margin:26px 0 8px;padding-top:6px}
+.covgrid{display:flex;gap:22px;flex-wrap:wrap;font-size:.9rem}
+.covgrid b{font-size:1.15rem;display:block}
+.warn{font-size:.85rem;color:#7a5b00;margin:4px 0 0;padding-left:18px;position:relative}
+.warn:before{content:"▲";position:absolute;left:0;color:#b8860b;font-size:.7rem;top:3px}
+ol.complaints{list-style:none;padding:0;margin:0}
+ol.complaints li{border-top:1px solid var(--line);padding:12px 0}
+ol.complaints li:first-child{border-top:none}
+.crow{display:flex;justify-content:space-between;gap:12px;align-items:baseline}
+.cname{font-weight:600}
+.sev{font-variant-numeric:tabular-nums;font-weight:700}
+.chips{margin-top:4px}
+.chip{display:inline-block;font-size:.72rem;background:#eef1f5;color:#3a4a5f;border-radius:6px;padding:1px 7px;margin:2px 4px 0 0}
+.chip.risk{background:#fbe9e6;color:#9a3b25}
+.drivers{display:flex;gap:24px;flex-wrap:wrap}
+.drivers ul{margin:6px 0;padding-left:18px}
+a{color:var(--accent)}
+footer{color:var(--muted);font-size:.82rem;margin-top:30px;border-top:1px solid var(--line);padding-top:14px}
+.supp{color:#6b7280;font-style:italic}
+.provbar{border-radius:10px;padding:10px 14px;margin:14px 0;font-size:.9rem;font-weight:600}
+.prov-demo{background:#fbe9e6;border:1px solid #e6b3a6;color:#8a2f18}
+.prov-live{background:#e6f4ec;border:1px solid #a6d6bb;color:#1a6b47}
+.prov-mixed{background:#fdf6e3;border:1px solid #ecdca6;color:#7a5b00}
+.provsrc{font-weight:400;font-size:.82rem;margin-top:4px}
+@media print{body{background:#fff}.card{break-inside:avoid}}
+</style></head>
+<body><div class="wrap"><header><h1>Methodology</h1>
+<div class="sub">Published formulas, weights, and the suppression rules</div></header>
+
+<div class="card"><h2 style="margin-top:0">What this is (and is not)</h2>
+<p>The Citizen Index measures <b>available public discourse</b> — it is not a survey.
+Only ~20% of Nigerians are on social media (younger, more urban, more southern),
+and WhatsApp and radio cannot be accessed compliantly. We correct what we can and
+disclose what we cannot.</p></div>
+
+<div class="card"><h2 style="margin-top:0">Record weight</h2>
+<p><code>w = a · s · r · (1 − b)</code> — unique-author weight (down-weights power
+users), source reliability, recency decay, and a bot/coordination discount. Most
+bias correction is encoded here, in every number.</p></div>
+
+<div class="card"><h2 style="margin-top:0">Data Confidence Score (the gate)</h2>
+<p><code>DCS = 100·(0.35·A + 0.20·D + 0.20·G + 0.15·I + 0.10·R)</code> — sample
+adequacy, source diversity, geographic coverage, integrity, recency. Bands: ≥70
+High, 55–70 Medium, 40–55 Low, &lt;40 suppressed. A separate <b>hard sample-size
+floor</b> (≥25 unique authors) withholds tiny slices regardless of DCS. No number
+is published unless it clears this gate.</p></div>
+
+<div class="card"><h2 style="margin-top:0">National Mood Index</h2>
+<p><code>NMI = 50 + 50·P</code>, where P is the <b>population-normalised</b> weighted
+mean sentiment across states — so high-volume states and platforms cannot stand in
+for the country. Labels run Very positive → Highly distressed.</p></div>
+
+<div class="card"><h2 style="margin-top:0">Complaint Severity</h2>
+<p>Blends volume, negativity, anger, geographic spread, velocity and source
+diversity, then applies a <b>coordination risk discount</b>. Coordinated content is
+excluded from the underlying figures, so a push campaign cannot buy a top spot.</p></div>
+
+<div class="card"><h2 style="margin-top:0">Anger Index (computed, not yet published)</h2>
+<p>An Anger Index and leader scorecards are computed internally but <b>withheld from
+public surfaces</b> until an appeals-and-correction process and a validated track
+record are in place. Lawful, strongly-worded criticism is never labelled dangerous.</p></div>
+
+<footer><p>Model and taxonomy versions are recorded so any historical figure can be
+reproduced. Questions and corrections are welcome.</p></footer></div></body></html>

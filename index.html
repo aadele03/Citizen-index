@@ -1,0 +1,459 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex">
+<title>The Citizen Index — 2026-W36</title><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap"><style>
+:root{
+  color-scheme: light;
+  --paper:#f4f2ea; --surface:#fffdf7; --surface-2:#faf8f0; --rail:#fbf9f2;
+  --ink:#1a1c16; --ink-2:#54564c; --muted:#87887b;
+  --line:#e4e0d4; --line-strong:#d6d1c2;
+  --accent:#0f6b3f; --accent-ink:#0a5230; --accent-wash:#e7f0e9;
+  --pos:#2f8f57; --pos-ink:#1c6b3d; --pos-wash:#e7f0e9;
+  --grievance:#b5532f; --grievance-track:#efe6de; --grief-wash:#f6e9e2;
+  --m-distress:#9a2c26; --m-negative:#bd4a2b; --m-concern:#c67e32;
+  --m-mixed:#bd922b; --m-positive:#3f9a6b; --m-vpositive:#137a49;
+  --band-high:#137a49; --band-med:#b0862a; --band-low:#bd4a2b; --band-supp:#6b7280;
+  --grid:#e4e0d4; --shadow:0 1px 2px rgba(26,28,22,.05), 0 10px 30px rgba(26,28,22,.06);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    color-scheme: dark;
+    --paper:#101109; --surface:#191b12; --surface-2:#15170f; --rail:#14150d;
+    --ink:#f1f0e6; --ink-2:#b8b9ab; --muted:#8b8c7e;
+    --line:#2a2c22; --line-strong:#383a2c;
+    --accent:#46b57c; --accent-ink:#7fce9f; --accent-wash:#182a20;
+    --pos:#5cb98a; --pos-ink:#7fce9f; --pos-wash:#182a20;
+    --grievance:#d67a4f; --grievance-track:#2a221b; --grief-wash:#2a1e16;
+    --m-distress:#d05a4f; --m-negative:#dd6f45; --m-concern:#db9a4a;
+    --m-mixed:#d3ac47; --m-positive:#5cb98a; --m-vpositive:#3fae74;
+    --band-high:#3fae74; --band-med:#d3ac47; --band-low:#dd6f45; --band-supp:#8b8c7e;
+    --grid:#2a2c22; --shadow:0 1px 2px rgba(0,0,0,.3), 0 12px 34px rgba(0,0,0,.4);
+  }
+}
+:root[data-theme="dark"]{
+  color-scheme: dark;
+  --paper:#101109; --surface:#191b12; --surface-2:#15170f; --rail:#14150d;
+  --ink:#f1f0e6; --ink-2:#b8b9ab; --muted:#8b8c7e;
+  --line:#2a2c22; --line-strong:#383a2c;
+  --accent:#46b57c; --accent-ink:#7fce9f; --accent-wash:#182a20;
+  --pos:#5cb98a; --pos-ink:#7fce9f; --pos-wash:#182a20;
+  --grievance:#d67a4f; --grievance-track:#2a221b; --grief-wash:#2a1e16;
+  --m-distress:#d05a4f; --m-negative:#dd6f45; --m-concern:#db9a4a;
+  --m-mixed:#d3ac47; --m-positive:#5cb98a; --m-vpositive:#3fae74;
+  --band-high:#3fae74; --band-med:#d3ac47; --band-low:#dd6f45; --band-supp:#8b8c7e;
+  --grid:#2a2c22; --shadow:0 1px 2px rgba(0,0,0,.3), 0 12px 34px rgba(0,0,0,.4);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--paper);color:var(--ink);
+  font-family:"Public Sans",system-ui,-apple-system,Segoe UI,Roboto,sans-serif;font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.serif{font-family:"Newsreader",Georgia,"Times New Roman",serif}
+.mono{font-family:"IBM Plex Mono",ui-monospace,SFMono-Regular,Menlo,monospace}
+a{color:var(--accent-ink);text-underline-offset:2px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:4px}
+[hidden]{display:none!important}
+.shell{max-width:1140px;margin:0 auto;display:grid;grid-template-columns:236px minmax(0,1fr);gap:44px;padding:0 26px}
+.main{min-width:0;padding:22px 0 90px}
+.rail{position:sticky;top:0;align-self:start;height:100vh;display:flex;flex-direction:column;padding:26px 0 22px}
+.brand{border-bottom:1.5px solid var(--ink);padding-bottom:16px}
+.brand .eyebrow{font-size:.64rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent-ink);font-weight:700}
+.brand .wordmark{font-size:1.5rem;font-weight:600;letter-spacing:-.01em;line-height:1.05;margin:5px 0 0;text-wrap:balance}
+.brand .live{display:inline-flex;align-items:center;gap:6px;font-size:.66rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--accent-ink);background:var(--accent-wash);border:1px solid var(--accent);border-radius:999px;padding:3px 9px;margin-top:12px}
+.brand .live.mixed{color:#7a5b00;background:var(--grief-wash);border-color:var(--m-mixed)}
+.brand .live.demo{color:#8a2f18;background:var(--grief-wash);border-color:var(--grievance)}
+.live .pulse{width:6px;height:6px;border-radius:50%;background:currentColor}
+@media (prefers-reduced-motion:no-preference){.live .pulse{animation:blink 2.4s ease-in-out infinite}}
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.35}}
+nav.jump{margin-top:22px;display:flex;flex-direction:column;gap:2px}
+nav.jump a{display:flex;align-items:center;gap:11px;font-size:.9rem;font-weight:500;color:var(--ink-2);text-decoration:none;padding:8px 10px;border-radius:8px;transition:background .15s,color .15s}
+nav.jump a .tick{width:6px;height:6px;border-radius:50%;background:var(--line-strong);flex:none;transition:background .15s,transform .15s}
+nav.jump a:hover{background:var(--surface-2);color:var(--ink)}
+nav.jump a.active{color:var(--ink);font-weight:600;background:var(--surface-2)}
+nav.jump a.active .tick{background:var(--accent);transform:scale(1.5)}
+.rail-foot{margin-top:auto;padding-top:16px;display:flex;align-items:center;justify-content:space-between;gap:8px}
+.rail-foot .edition{font-size:.74rem;color:var(--muted);line-height:1.35}
+.tbtn{appearance:none;border:1px solid var(--line-strong);background:var(--surface);color:var(--ink-2);width:34px;height:34px;border-radius:9px;cursor:pointer;display:grid;place-items:center;flex:none}
+.tbtn:hover{color:var(--ink);border-color:var(--muted)}
+.tbtn svg{width:17px;height:17px}
+.tbtn .moon{display:none}
+:root[data-theme="dark"] .tbtn .sun,:root:not([data-theme="light"]) .tbtn .sun{display:none}
+:root[data-theme="dark"] .tbtn .moon,:root:not([data-theme="light"]) .tbtn .moon{display:block}
+@media (prefers-color-scheme:light){:root:not([data-theme="dark"]) .tbtn .sun{display:block}:root:not([data-theme="dark"]) .tbtn .moon{display:none}}
+.preview-note{background:var(--grief-wash);border:1px solid var(--m-mixed);color:#7a5b00;border-radius:9px;padding:9px 13px;margin:0 0 26px;font-size:.8rem;font-weight:600;display:flex;gap:8px;align-items:center}
+:root[data-theme="dark"] .preview-note,:root:not([data-theme="light"]) .preview-note{color:var(--m-mixed)}
+.preview-note .dot{width:7px;height:7px;border-radius:50%;background:var(--m-mixed);flex:none}
+section{scroll-margin-top:20px}
+.sec{margin-top:48px}
+.sec-head{display:flex;align-items:center;justify-content:space-between;gap:12px;border-bottom:1px solid var(--line-strong);padding-bottom:9px;margin-bottom:18px}
+.sec-head h2{font-size:1.3rem;font-weight:600;margin:0;letter-spacing:-.01em}
+.sec-head .right{display:flex;align-items:center;gap:10px}
+.tag{font-size:.64rem;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line-strong);border-radius:5px;padding:2px 7px;font-weight:600;white-space:nowrap}
+.seg{display:inline-flex;background:var(--surface-2);border:1px solid var(--line);border-radius:9px;padding:3px;gap:2px}
+.seg button{appearance:none;border:0;background:none;color:var(--ink-2);font:inherit;font-size:.78rem;font-weight:600;padding:4px 12px;border-radius:6px;cursor:pointer;white-space:nowrap}
+.seg button:hover{color:var(--ink)}
+.seg button.on{background:var(--surface);color:var(--ink);box-shadow:0 1px 2px rgba(0,0,0,.08)}
+.hero .eyebrow{font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.hero-top{display:flex;align-items:flex-end;gap:30px;flex-wrap:wrap;margin-top:10px}
+.score{font-size:5.4rem;font-weight:500;line-height:.82;letter-spacing:-.02em}
+.score .of{font-size:1.4rem;color:var(--muted);font-weight:400}
+.hero-side{padding-bottom:9px;display:flex;flex-direction:column;gap:8px}
+.verdict{font-size:1.85rem;font-weight:500;line-height:1.02}
+.conf{display:inline-flex;align-items:center;gap:9px;font-size:.78rem;font-weight:600;color:var(--ink-2);flex-wrap:wrap}
+.conf .pill{display:inline-block;color:#fff;border-radius:999px;padding:2px 9px;font-size:.72rem}
+.conf .mono{font-size:.74rem;color:var(--muted);font-weight:400}
+.delta{font-weight:700;font-variant-numeric:tabular-nums;display:inline-flex;align-items:center;gap:4px}
+.delta.dn{color:var(--grievance)} .delta.up{color:var(--pos-ink)}
+.chartcard{margin-top:24px;background:var(--surface);border:1px solid var(--line);border-radius:14px;box-shadow:var(--shadow);padding:16px 18px 12px}
+.chartcard .chead{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px;flex-wrap:wrap;row-gap:8px}
+.chartcard .chead .lab{font-size:.78rem;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted)}
+.chartwrap{position:relative;width:100%}
+.chartwrap svg{display:block;width:100%;height:auto;touch-action:none}
+.ctip{position:absolute;pointer-events:none;background:var(--ink);color:var(--paper);font-size:.74rem;font-weight:600;padding:5px 9px;border-radius:7px;white-space:nowrap;transform:translate(-50%,-115%);opacity:0;transition:opacity .12s;z-index:5;box-shadow:0 4px 12px rgba(0,0,0,.25)}
+.ctip .t-sub{font-weight:400;opacity:.8;font-size:.68rem}
+.meter{margin:26px 0 4px}
+.meter-track{position:relative;height:15px;border-radius:999px;background:linear-gradient(90deg,var(--m-distress) 0%,var(--m-negative) 20%,var(--m-concern) 35%,var(--m-mixed) 47%,var(--m-positive) 66%,var(--m-vpositive) 100%);box-shadow:inset 0 0 0 1px rgba(0,0,0,.07)}
+.meter-mid{position:absolute;top:-5px;bottom:-5px;width:2px;background:var(--ink);opacity:.32;border-radius:2px}
+.meter-marker{position:absolute;top:50%;width:19px;height:19px;border-radius:50%;background:var(--surface);border:3px solid var(--ink);transform:translate(-50%,-50%);box-shadow:0 2px 6px rgba(0,0,0,.25);z-index:2}
+.meter-scale{display:flex;justify-content:space-between;margin-top:11px;font-size:.72rem;color:var(--muted)}
+.meter-scale .mid{color:var(--ink-2);font-weight:600}
+.readnote{font-size:.9rem;color:var(--ink-2);border-left:3px solid var(--accent);padding:6px 0 6px 14px;margin:24px 0 0;max-width:62ch}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow)}
+.stat{background:var(--surface);padding:16px 18px}
+.stat .v{font-size:1.6rem;font-weight:600;letter-spacing:-.01em;font-variant-numeric:tabular-nums;line-height:1.1}
+.stat .k{font-size:.78rem;color:var(--ink-2);margin-top:2px}
+.stat .sub{font-size:.72rem;color:var(--muted);margin-top:1px}
+@media(max-width:640px){.stats{grid-template-columns:repeat(2,1fr)}}
+.panel{border:1px solid var(--line);border-radius:12px;overflow:hidden;background:var(--surface);box-shadow:var(--shadow)}
+.cx{border-top:1px solid var(--line)}
+.cx:first-child{border-top:none}
+.cx-btn{width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:15px 18px;display:block;color:inherit;font:inherit}
+.cx-btn:hover{background:var(--surface-2)}
+.cx-row{display:flex;align-items:baseline;gap:12px}
+.cx-rank{font-size:.85rem;color:var(--muted);font-weight:700;width:1.4em;flex:none;font-variant-numeric:tabular-nums}
+.cx-name{font-weight:600;font-size:1.02rem;flex:1}
+.cx-sev{font-variant-numeric:tabular-nums;font-weight:700;font-size:1rem;color:var(--grievance)}
+.cx-caret{width:15px;height:15px;color:var(--muted);flex:none;transition:transform .2s;margin-left:2px}
+.cx.open .cx-caret{transform:rotate(90deg)}
+.cx-bar{height:6px;border-radius:999px;background:var(--grievance-track);margin:10px 0 0;overflow:hidden}
+.cx-bar > i{display:block;height:100%;border-radius:999px;background:var(--grievance)}
+.cx-detail{max-height:0;overflow:hidden;transition:max-height .25s ease}
+.cx.open .cx-detail{max-height:680px}
+.cx-detail-in{padding:0 18px 16px 44px}
+.chip-label{font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:700;margin-right:4px;align-self:center}
+.chip{font-size:.72rem;color:var(--ink-2);background:var(--surface-2);border:1px solid var(--line);border-radius:6px;padding:2px 8px;font-weight:500}
+.chip.risk{color:#fff;background:var(--grievance);border-color:var(--grievance)}
+.cx-drow{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin-top:8px}
+.sec-note{font-size:.82rem;color:var(--muted);margin-top:14px;max-width:66ch}
+.hl-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hl{background:var(--surface);border:1px solid var(--line);border-left:3px solid var(--pos);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
+.hl .htop{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:6px}
+.hl .hcat{font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;font-weight:700;color:var(--pos-ink)}
+.hl h3{font-size:1.02rem;margin:0 0 4px;font-weight:600}
+.hl p{margin:0;font-size:.88rem;color:var(--ink-2)}
+@media(max-width:600px){.hl-grid{grid-template-columns:1fr}}
+.cat{border-top:1px solid var(--line)}
+.cat:first-child{border-top:none}
+.cat-btn{width:100%;text-align:left;background:none;border:0;cursor:pointer;padding:14px 18px;display:block;color:inherit;font:inherit}
+.cat-btn:hover{background:var(--surface-2)}
+.cat-row{display:flex;align-items:center;gap:14px}
+.cat-name{font-weight:600;font-size:1rem;flex:1;min-width:0}
+.cat-dot{width:9px;height:9px;border-radius:50%;flex:none}
+.cat-sent{font-size:.9rem;color:var(--ink);font-weight:700;font-variant-numeric:tabular-nums;width:34px;text-align:right;flex:none}
+.cat-delta{font-size:.85rem;font-weight:700;font-variant-numeric:tabular-nums;width:54px;text-align:right;flex:none}
+.cat-delta.up{color:var(--pos-ink)} .cat-delta.dn{color:var(--grievance)} .cat-delta.flat{color:var(--muted)}
+.cat-summary{font-size:.86rem;color:var(--ink-2);margin:7px 0 0 23px;max-width:74ch}
+.cat-caret{width:14px;height:14px;color:var(--muted);flex:none;transition:transform .2s}
+.cat.open .cat-caret{transform:rotate(90deg)}
+.cat-detail{max-height:0;overflow:hidden;transition:max-height .25s ease}
+.cat.open .cat-detail{max-height:760px}
+.cat-detail-in{padding:2px 18px 16px 41px}
+.splitbar{height:8px;border-radius:999px;overflow:hidden;display:flex;margin:6px 0 4px;max-width:360px}
+.splitbar .neg{background:var(--grievance)} .splitbar .pos{background:var(--pos)}
+.splitlab{font-size:.72rem;color:var(--muted);display:flex;justify-content:space-between;max-width:360px}
+.movers{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-bottom:22px}
+.mcol{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:16px 18px;box-shadow:var(--shadow)}
+.mcol h3{font-size:.76rem;letter-spacing:.06em;text-transform:uppercase;margin:0 0 12px;font-weight:700;display:flex;align-items:center;gap:7px}
+.mcol.imp h3{color:var(--pos-ink)} .mcol.wor h3{color:var(--grievance)}
+.mrow{display:flex;align-items:center;gap:10px;padding:8px 0;border-top:1px solid var(--line)}
+.mrow:first-of-type{border-top:none}
+.mrow .mname{flex:1;font-size:.9rem;font-weight:500}
+.mrow .mspark{width:64px;height:20px;flex:none}
+.mrow .mdelta{font-size:.85rem;font-weight:700;font-variant-numeric:tabular-nums;width:52px;text-align:right}
+.mcol.imp .mdelta{color:var(--pos-ink)} .mcol.wor .mdelta{color:var(--grievance)}
+@media(max-width:600px){.movers{grid-template-columns:1fr}}
+.honesty{background:var(--surface-2);border:1px solid var(--line-strong);border-radius:12px;padding:22px 24px}
+.honesty h3{font-size:1.05rem;margin:0 0 4px;font-weight:600}
+.honesty .lead{font-size:.9rem;color:var(--ink-2);margin:0 0 14px;max-width:64ch}
+.honesty ul{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+.honesty li{position:relative;padding-left:22px;font-size:.9rem;color:var(--ink-2);max-width:70ch}
+.honesty li::before{content:"";position:absolute;left:2px;top:8px;width:8px;height:8px;border:1.5px solid var(--grievance);border-radius:2px;transform:rotate(45deg)}
+.method{margin-top:18px;font-size:.88rem;color:var(--ink-2)}
+.method p{margin:0 0 12px;max-width:74ch}
+.labels{display:flex;flex-wrap:wrap;gap:6px;margin:6px 0 14px}
+.fine{font-size:.78rem;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+.ev-head{font-size:.68rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:700;margin:14px 0 8px}
+.ev-list{display:flex;flex-direction:column;gap:9px}
+.ev{display:flex;gap:9px;align-items:flex-start}
+.ev-badge{flex:none;font-size:.58rem;font-weight:700;letter-spacing:.03em;text-transform:uppercase;padding:2px 6px;border-radius:5px;margin-top:2px;color:#fff}
+.ev-art{background:var(--accent)}.ev-yt{background:#c0392b}.ev-com{background:var(--muted)}.ev-web{background:#5f7d8c}
+.ev-body{min-width:0}
+.ev-title{font-size:.86rem;font-weight:500;color:var(--ink);text-decoration:none;line-height:1.35;display:inline}
+.ev-title:hover{text-decoration:underline;text-decoration-color:var(--line-strong)}
+.ev-ext{color:var(--accent-ink);font-weight:700}
+.ev-meta{font-size:.74rem;color:var(--muted);margin-top:2px}
+.ev-pol{font-variant-numeric:tabular-nums;font-weight:700}
+.ev-pol.pos{color:var(--pos-ink)}.ev-pol.neg{color:var(--grievance)}
+.ev-note{font-size:.72rem;color:var(--muted);margin-top:10px;font-style:italic;max-width:66ch}
+.stbar{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:14px}
+.stbar .lft{display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+.stsel{appearance:none;-webkit-appearance:none;background:var(--surface);border:1px solid var(--line-strong);border-radius:9px;padding:7px 12px;font:inherit;font-size:.85rem;font-weight:600;color:var(--ink);cursor:pointer}
+.legend{display:flex;align-items:center;gap:8px;font-size:.72rem;color:var(--muted)}
+.legend .grad{width:120px;height:9px;border-radius:999px;background:linear-gradient(90deg,var(--m-distress),var(--m-negative),var(--m-concern),var(--m-mixed),var(--m-positive),var(--m-vpositive))}
+.zones{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.zone{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px 14px;box-shadow:var(--shadow)}
+.zone.wide{grid-column:1 / -1}
+.zone h4{margin:0 0 10px;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:700;display:flex;justify-content:space-between}
+.tiles{display:flex;flex-wrap:wrap;gap:6px}
+.tile{display:inline-flex;align-items:center;gap:8px;padding:8px 11px;border-radius:9px;border:1px solid rgba(0,0,0,.14);cursor:pointer;color:#fff;text-shadow:0 1px 1px rgba(0,0,0,.34);transition:transform .1s}
+.tile:hover{transform:translateY(-2px)}
+.tile .tc{font-size:.84rem;font-weight:600;line-height:1;white-space:nowrap}
+.tile .tv{font-size:.72rem;font-weight:700;font-variant-numeric:tabular-nums;background:rgba(0,0,0,.2);padding:1px 6px;border-radius:6px}
+.tile.sel{outline:3px solid var(--ink);outline-offset:1px}
+.stdetail{margin-top:16px;background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;box-shadow:var(--shadow)}
+.std-head{display:flex;justify-content:space-between;align-items:flex-start;gap:12px;border-bottom:1px solid var(--line);padding-bottom:12px;margin-bottom:12px}
+.std-name{font-size:1.25rem;font-weight:600}
+.std-zone{font-size:.78rem;color:var(--muted)}
+.std-score{font-size:2rem;font-weight:600;font-variant-numeric:tabular-nums;line-height:1}
+.std-band{font-size:.78rem;color:var(--ink-2);margin-top:2px}
+.std-band .up{color:var(--pos-ink);font-weight:700}.std-band .dn{color:var(--grievance);font-weight:700}
+.std-cols{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.std-cols h5{margin:0 0 8px;font-size:.72rem;letter-spacing:.05em;text-transform:uppercase;font-weight:700}
+.std-cols h5.cw{color:var(--grievance)} .std-cols h5.cb{color:var(--pos-ink)}
+.stlist{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:7px}
+.stlist li{display:flex;justify-content:space-between;gap:10px;font-size:.88rem;color:var(--ink-2)}
+.stlist .v{font-variant-numeric:tabular-nums;font-weight:700}
+.stlist.neg .v{color:var(--grievance)} .stlist.pos .v{color:var(--pos-ink)}
+@media(max-width:560px){.zones{grid-template-columns:1fr}.std-cols{grid-template-columns:1fr;gap:12px}}
+@media(max-width:860px){
+  .shell{grid-template-columns:1fr;gap:0}
+  .rail{position:sticky;top:0;height:auto;flex-direction:row;align-items:center;gap:14px;padding:10px 0;background:var(--paper);border-bottom:1px solid var(--line);z-index:20;overflow-x:auto}
+  .brand{border:0;padding:0;flex:none}
+  .brand .eyebrow,.brand .live{display:none}
+  .brand .wordmark{font-size:1.12rem}
+  nav.jump{flex-direction:row;margin:0;gap:2px;flex:1}
+  nav.jump a{padding:7px 10px;white-space:nowrap;font-size:.83rem}
+  nav.jump a .tick{display:none}
+  .rail-foot{margin:0;padding:0;flex:none}
+  .rail-foot .edition{display:none}
+  .main{padding-top:22px}
+  section{scroll-margin-top:66px}
+  .score{font-size:4.3rem}.verdict{font-size:1.55rem}
+}
+</style></head><body><div class="shell"><aside class="rail"><div class="brand"><div class="eyebrow">Nigeria</div><div class="wordmark serif">The Citizen Index</div><span class="live"><span class="pulse"></span> Live data</span></div><nav class="jump" aria-label="Pages"><a href="#mood" data-view="mood" class="active"><span class="tick"></span> National mood</a><a href="#state" data-view="state"><span class="tick"></span> State</a><a href="#data" data-view="data"><span class="tick"></span> Data</a></nav><div class="rail-foot"><div class="edition">Edition 2026-W36<br>2026-09-06</div><button class="tbtn" id="theme" type="button" aria-label="Toggle light or dark theme"><svg class="sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg><svg class="moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg></button></div></aside><main class="main"><div id="view-mood"><section id="mood" class="hero"><div class="eyebrow">National Mood Index &middot; this week</div><div class="hero-top"><div class="score serif" style="color:var(--m-mixed)">48.0<span class="of"> / 100</span></div><div class="hero-side"><div class="verdict serif" style="color:var(--m-mixed)">Mixed</div><div class="conf"><span class="delta dn" id="wow"></span></div><div class="conf"><span class="pill" style="background:var(--band-high)">High confidence</span><span class="mono">DCS 73.0 &middot; 50 = neutral</span></div></div></div><div class="chartcard"><div class="chead"><span class="lab">Mood over time</span><div class="seg" id="rangeseg"><button data-range="1w" class="on">1 week</button><button data-range="1m">1 month</button><button data-range="1q">1 quarter</button><button data-range="1y">1 year</button></div></div><div class="chartwrap" id="trendwrap"><div class="ctip" id="trendtip"></div></div></div><div class="meter"><div class="meter-track"><div class="meter-mid" style="left:50%"></div><div class="meter-marker" style="left:48.0%"></div></div><div class="meter-scale"><span>0 &middot; Highly distressed</span><span class="mid">50 &middot; Neutral</span><span>100 &middot; Very positive</span></div></div><p class="readnote">This measures <strong>available public discourse</strong>, not a survey of all Nigerians. Every figure shows its confidence; anything we cannot support with enough representative data is withheld, never guessed.</p></section><section id="complaints" class="sec"><div class="sec-head"><h2>Top citizen complaints</h2><div class="right"><span class="tag">public sentiment</span></div></div><div class="panel" id="cxlist"></div><p class="sec-note">Ranked by Complaint Severity. Tap a row for what is driving it and the sources behind it. Coordinated or inauthentic activity is excluded from the figures and further discounted, so a push campaign cannot manufacture a top complaint.</p></section><section id="highlights" class="sec"><div class="sec-head"><h2>Highlights — what Nigerians feel good about</h2><div class="right"><span class="tag">positive sentiment</span></div></div><div class="hl-grid" id="hllist"></div></section><section id="categories" class="sec"><div class="sec-head"><h2>Categories</h2><div class="right" id="catctl"></div></div><div id="movers"></div><div class="panel" id="catlist"></div><p class="sec-note">Each category's sentiment is on the same 0–100 scale as the national mood (50 = neutral). Movement is the change in that category's weekly reading over the selected period. Tap a category for its negative/positive split and the sources behind it.</p></section></div><div id="view-state" hidden><section id="states" class="sec" style="margin-top:8px"><div class="sec-head"><h2>Mood by state</h2><div class="right"><span class="tag">geographic</span></div></div><p style="font-size:.9rem;color:var(--ink-2);margin:0 0 18px;max-width:64ch">National figures are a population-weighted roll-up of these state readings. Recolour the map by any issue to see how the picture changes — insecurity in Borno and insecurity in Lagos are measured separately.</p><div class="stbar"><div class="lft"><label for="metricsel" style="font-size:.78rem;color:var(--muted);font-weight:600">Colour by</label><select id="metricsel" class="stsel" aria-label="Colour states by"></select></div><div class="legend"><span>Distressed</span><span class="grad"></span><span>Positive</span></div></div><div class="zones" id="zones"></div><div class="stdetail" id="stdetail"></div><p class="sec-note">Tap any state for its breakdown. Tiles are a schematic layout grouped by geopolitical zone — not a scaled map. Each state's score is computed <strong>only from records resolved to that state</strong>. Only states that clear the sample threshold are shown; thin states are withheld, not estimated.</p></section></div><div id="view-data" hidden><section id="coverage" class="sec" style="margin-top:8px"><div class="sec-head"><h2>Coverage &amp; confidence</h2></div><div class="stats"><div class="stat"><div class="v">48,139</div><div class="k">records analysed</div><div class="sub">7-day window</div></div><div class="stat"><div class="v">4,109</div><div class="k">unique authors</div><div class="sub">de-duplicated</div></div><div class="stat"><div class="v">73.0</div><div class="k">data confidence</div><div class="sub">High band</div></div><div class="stat"><div class="v">3</div><div class="k">live sources</div><div class="sub">news · YouTube · web</div></div></div></section><section id="about" class="sec"><div class="sec-head"><h2>About the data</h2></div><div class="honesty"><h3>What this can and can't tell you</h3><p class="lead">We publish the gaps as plainly as the numbers. This index is strongest as a measure of <em>direction and change over time</em>, not an exact reading of national opinion.</p><ul><li>This is an analysis of available public discourse, not a survey of all Nigerians.</li><li>Phase 1 is English-only; Nigerian Pidgin and Hausa are on the roadmap.</li><li>WhatsApp (Nigeria's most-used platform) and radio (dominant in the North) are not represented — they cannot be accessed compliantly.</li><li>Online discourse over-represents younger, urban, southern voices.</li></ul></div><div class="method"><p style="margin-top:18px"><a href="methodology.html" class="serif" style="font-weight:600">Full methodology →</a> &nbsp; Categories, sub-issues and problem-types are assigned by transparent classification; sentiment is measured per target; a Data Confidence Score gates every number and withholds under-powered slices.</p><p style="font-weight:600;color:var(--ink);margin-bottom:6px">Every claim is labelled by type:</p><div class="labels"><span class="chip">public sentiment</span><span class="chip">verified fact</span><span class="chip">media narrative</span><span class="chip">model inference</span><span class="chip">prediction</span><span class="chip">analyst conclusion</span></div><p class="fine">Distinct claim types are kept separate and labelled, as above. Corrections are published in the following edition. Edition 2026-W36 &middot; generated 2026-09-06T05:05Z &middot; © The Citizen Index &middot; Nigeria.</p></div></section></div></main></div><script>window.DATA={"edition": "2026-W36", "generated_at": "2026-09-06T05:05:01.105094+00:00", "data_mode": "live", "provenance": {"data_mode": "live", "real_records": 48152, "synthetic_records": 0, "sources": {"rss": {"real": 17913, "synthetic": 0, "kind": "live"}, "youtube": {"real": 6926, "synthetic": 0, "kind": "live"}, "gdelt": {"real": 23313, "synthetic": 0, "kind": "live"}}}, "mood": {"score": 48.0, "label": "Mixed", "band": "High", "dcs": 73.0, "suppressed": false}, "trend": {"series": [{"t": "2026-08-02", "score": 46.5}, {"t": "2026-08-03", "score": 46.9}, {"t": "2026-08-04", "score": 47.2}, {"t": "2026-08-05", "score": 48.0}, {"t": "2026-08-06", "score": 48.5}, {"t": "2026-08-07", "score": 48.6}, {"t": "2026-08-08", "score": 48.5}, {"t": "2026-08-11", "score": 48.3}, {"t": "2026-08-12", "score": 48.5}, {"t": "2026-08-13", "score": 48.6}, {"t": "2026-08-14", "score": 48.5}, {"t": "2026-08-15", "score": 48.1}, {"t": "2026-08-16", "score": 48.1}, {"t": "2026-08-17", "score": 48.1}, {"t": "2026-08-18", "score": 48.2}, {"t": "2026-08-19", "score": 48.4}, {"t": "2026-08-20", "score": 48.7}, {"t": "2026-08-21", "score": 48.7}, {"t": "2026-08-22", "score": 49.2}, {"t": "2026-08-23", "score": 49.0}, {"t": "2026-08-24", "score": 48.9}, {"t": "2026-08-25", "score": 48.9}, {"t": "2026-08-26", "score": 48.7}, {"t": "2026-08-27", "score": 48.7}, {"t": "2026-08-28", "score": 48.2}, {"t": "2026-08-29", "score": 48.2}, {"t": "2026-08-31", "score": 48.3}, {"t": "2026-09-01", "score": 48.4}, {"t": "2026-09-02", "score": 48.5}, {"t": "2026-09-03", "score": 48.5}, {"t": "2026-09-04", "score": 48.1}, {"t": "2026-09-05", "score": 48.1}, {"t": "2026-09-06", "score": 48.0}]}, "coverage": {"records": 48139, "unique_authors": 4109, "dcs": 73.0, "band": "High", "source_shares": [0.372, 0.144, 0.484]}, "complaints": [{"name": "Politics and elections", "severity": 52, "driven_by": ["safety", "quality", "affordability"], "evidence": [{"type": "youtube", "title": "An angry viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-08-02", "pol": -0.8, "url": "https://www.youtube.com/watch?v=V5_Op49ol8o&lc=Ugwo2NTI0ZCGb1jV6np4AaABAg"}, {"type": "youtube", "title": "An angry viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-09-01", "pol": -0.8, "url": "https://www.youtube.com/watch?v=ttVOpNhFDmI&lc=Ugz5OkEiD7fExCW7EON4AaABAg"}, {"type": "youtube", "title": "An angry viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-08-12", "pol": -0.8, "url": "https://www.youtube.com/watch?v=I5Fn_ALhlDA&lc=UgxER549Msz0FP9nPp94AaABAg"}]}, {"name": "Security", "severity": 47, "driven_by": ["safety", "quality", "affordability"], "evidence": [{"type": "article", "title": "Three vigilantes killed in midnight gun attack in Plateau \u2014 Three members of a local vigilante group have been\u2026", "src": "rss", "date": "2026-08-26", "pol": -0.8, "url": "https://www.vanguardngr.com/2026/08/three-vigilantes-killed-in-midnight-gun-attack-in-plateau/"}, {"type": "article", "title": "40 Suspected Bandits, 4 Vigilantes Killed As Security Forces Repel Attack In Katsina \u2014 Over 40 suspected bandi\u2026", "src": "rss", "date": "2026-07-28", "pol": -0.8, "url": "https://leadership.ng/40-suspected-bandits-4-vigilantes-killed-as-security-forces-repel-attack-in-katsina/"}, {"type": "article", "title": "Gunmen kill three miners in fresh Plateau attack \u2014 Gunmen on Thursday killed three miners in a fresh attack al\u2026", "src": "rss", "date": "2026-07-30", "pol": -0.8, "url": "https://www.vanguardngr.com/2026/07/gunmen-kill-three-miners-in-fresh-plateau-attack/"}]}, {"name": "Governance and corruption", "severity": 43, "driven_by": ["quality", "corruption", "safety"], "evidence": [{"type": "youtube", "title": "An angry viewer comment from Osun \u2014 opens the source thread", "src": "youtube", "date": "2026-08-15", "pol": -0.8, "url": "https://www.youtube.com/watch?v=kydRwFTxEf0&lc=UgzNZAwAWbCapstd4dV4AaABAg"}, {"type": "youtube", "title": "An angry viewer comment from Osun \u2014 opens the source thread", "src": "youtube", "date": "2026-08-07", "pol": -0.8, "url": "https://www.youtube.com/watch?v=swiuEki5JWQ&lc=UgwgCvL2hc_Lpw-zzi14AaABAg"}, {"type": "article", "title": "ICPC Restructures Workforce, Aligns Personnel With Anti-Corruption Mandate \u2014 The Independent Corrupt Practices\u2026", "src": "rss", "date": "2026-08-18", "pol": -0.8, "url": "https://leadership.ng/icpc-restructures-workforce-aligns-personnel-with-anti-corruption-mandate/"}]}, {"name": "Food and agriculture", "severity": 38, "driven_by": ["safety", "availability", "quality"], "evidence": [{"type": "article", "title": "Africa Hunger Crisis : Millions Face Acute Food Insecurity", "src": "gdelt", "date": "2026-07-26", "pol": -0.8, "url": "https://punchng.com/africas-hunger-burden/"}, {"type": "article", "title": "Strait Of Hormuz Closure By Iran Threatens Food Security In Nigeria, Others \u2014 US Warns \u2014 The United States has\u2026", "src": "rss", "date": "2026-08-26", "pol": -0.8, "url": "https://leadership.ng/strait-of-hormuz-closure-by-iran-threatens-food-security-in-nigeria-others-us-warns/"}, {"type": "article", "title": "Hardship: Gov Eno Takes Free Grains To Vulnerable Households \u2014 Akwa Ibom State Government has extended the fou\u2026", "src": "rss", "date": "2026-08-02", "pol": -0.7, "url": "https://leadership.ng/hardship-gov-eno-takes-free-grains-to-vulnerable-households/"}]}, {"name": "Water and sanitation", "severity": 38, "driven_by": ["affordability", "availability", "safety"], "evidence": [{"type": "youtube", "title": "A positive viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-08-07", "pol": 0.8, "url": "https://www.youtube.com/watch?v=KAfztBCjuPg&lc=Ugx1ZlwH6Pg95XG27at4AaABAg"}, {"type": "article", "title": "FCT landlords, business owners demand action over worsening Abuja floods \u2014 FCT landlords and business owners d\u2026", "src": "rss", "date": "2026-08-19", "pol": -0.7, "url": "https://punchng.com/fct-landlords-business-owners-demand-action-over-worsening-abuja-floods/?utm_source=rss.punchng.com&utm_medium=web"}, {"type": "article", "title": "Two die in refuse dump collapse \u2014 Two persons have been confirmed dead following the collapse of a refuse dump\u2026", "src": "rss", "date": "2026-08-29", "pol": -0.7, "url": "https://punchng.com/two-die-in-refuse-dump-collapse/?utm_source=rss.punchng.com&utm_medium=web"}]}, {"name": "Economy and cost of living", "severity": 27, "driven_by": ["affordability", "availability", "delay"], "evidence": [{"type": "youtube", "title": "An angry viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-08-15", "pol": -0.8, "url": "https://www.youtube.com/watch?v=RXNe10Vkg4Q&lc=UgziuOx1PQ45dAjpaOd4AaABAg"}, {"type": "youtube", "title": "An angry viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-08-15", "pol": -0.8, "url": "https://www.youtube.com/watch?v=wMD5H9VYiwQ&lc=UgwWHocsvT7rGd7Y1254AaABAg"}, {"type": "youtube", "title": "An angry viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-08-03", "pol": -0.7, "url": "https://www.youtube.com/watch?v=mGfbF5foXlY&lc=Ugzs5tNLxAeF8XMVIzF4AaABAg"}]}, {"name": "Roads and transportation", "severity": 26, "driven_by": ["safety", "quality", "access"], "evidence": [{"type": "youtube", "title": "An angry viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-08-26", "pol": -0.8, "url": "https://www.youtube.com/watch?v=ImtXzGrGMfs&lc=UgxJiXbPU0lmdpPc1-d4AaABAg"}, {"type": "article", "title": "Three Kano traffic officials hospitalised after mob attack \u2014 Three Kano traffic officials were hospitalised af\u2026", "src": "rss", "date": "2026-08-07", "pol": -0.8, "url": "https://punchng.com/three-kano-traffic-officials-hospitalised-after-mob-attack/?utm_source=rss.punchng.com&utm_medium=web"}, {"type": "article", "title": "Lagos explains delay in replacing BRT buses burnt during #EndSARS \u2014 Lagos State Government explains the delay \u2026", "src": "rss", "date": "2026-08-21", "pol": -0.7, "url": "https://punchng.com/lagos-explains-delay-in-replacing-brt-buses-burnt-during-endsars/?utm_source=rss.punchng.com&utm_medium=web"}]}, {"name": "Fuel, oil and gas", "severity": 25, "driven_by": ["affordability", "availability", "safety"], "evidence": [{"type": "youtube", "title": "An angry viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-08-21", "pol": -0.8, "url": "https://www.youtube.com/watch?v=uZrPjHxRX3o&lc=UgyQidUkbDC_O8mKRr94AaABAg"}, {"type": "youtube", "title": "A positive viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-08-23", "pol": 0.8, "url": "https://www.youtube.com/watch?v=laeAHumOYrs&lc=UgzXtnk1fmSt-valh3F4AaABAg"}, {"type": "youtube", "title": "A positive viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-08-26", "pol": 0.8, "url": "https://www.youtube.com/watch?v=Lu6htaAyZSE&lc=UgxUPIla6ULgT7Sl7R94AaABAg"}]}], "highlights": [], "categories": [{"key": "economy_cost_of_living", "name": "Economy and cost of living", "suppressed": false, "sentiment": 48.8, "neg": 11, "summary": "Mixed sentiment (48.8/100). Most-discussed: naira exchange. Framed mainly as affordability. 11% of 401 mentions negative.", "evidence": [{"type": "youtube", "title": "An angry viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-08-15", "pol": -0.8, "url": "https://www.youtube.com/watch?v=RXNe10Vkg4Q&lc=UgziuOx1PQ45dAjpaOd4AaABAg"}, {"type": "youtube", "title": "An angry viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-08-15", "pol": -0.8, "url": "https://www.youtube.com/watch?v=wMD5H9VYiwQ&lc=UgwWHocsvT7rGd7Y1254AaABAg"}, {"type": "youtube", "title": "An angry viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-08-03", "pol": -0.7, "url": "https://www.youtube.com/watch?v=mGfbF5foXlY&lc=Ugzs5tNLxAeF8XMVIzF4AaABAg"}], "delta": {"w": 0.3, "m": 0.8, "y": null}, "spark": [47.4, 47.7, 49.0, 50.8, 48.2, 48.5]}, {"key": "jobs_income", "name": "Jobs and income", "suppressed": false, "sentiment": 45.6, "neg": 22, "summary": "Mixed sentiment (45.6/100). Most-discussed: wages. Framed mainly as affordability. 22% of 377 mentions negative.", "evidence": [{"type": "article", "title": "Lagos pensioners protest, demand payment increase by Aug 31 \u2014 Lagos pensioners protest delayed pension increas\u2026", "src": "rss", "date": "2026-08-25", "pol": -0.8, "url": "https://punchng.com/lagos-pensioners-protest-demand-payment-increase-by-aug-31/?utm_source=rss.punchng.com&utm_medium=web"}, {"type": "article", "title": "Okrika Jetty Tragedy: Youths Return To Scoop More Oil Despite Deaths \u2014 Despite the deaths recorded at Okari Je\u2026", "src": "rss", "date": "2026-09-04", "pol": -0.7, "url": "https://leadership.ng/okrika-jetty-tragedy-youths-return-to-scoop-more-oil-despite-deaths/"}, {"type": "article", "title": "CDS assures military retirees of pension increase \u2014 The Chief of Defence Staff assures military retirees of a \u2026", "src": "rss", "date": "2026-08-21", "pol": -0.7, "url": "https://punchng.com/cds-assures-military-retirees-of-pension-increase/?utm_source=rss.punchng.com&utm_medium=web"}], "delta": {"w": 0.2, "m": 5.1, "y": null}, "spark": [49.1, 40.2, 51.9, 49.1, 45.1, 45.3]}, {"key": "security", "name": "Security", "suppressed": false, "sentiment": 38.5, "neg": 45, "summary": "Negative sentiment (38.5/100). Most-discussed: kidnapping. Framed mainly as safety. 45% of 1919 mentions negative.", "evidence": [{"type": "article", "title": "Three vigilantes killed in midnight gun attack in Plateau \u2014 Three members of a local vigilante group have been\u2026", "src": "rss", "date": "2026-08-26", "pol": -0.8, "url": "https://www.vanguardngr.com/2026/08/three-vigilantes-killed-in-midnight-gun-attack-in-plateau/"}, {"type": "article", "title": "40 Suspected Bandits, 4 Vigilantes Killed As Security Forces Repel Attack In Katsina \u2014 Over 40 suspected bandi\u2026", "src": "rss", "date": "2026-07-28", "pol": -0.8, "url": "https://leadership.ng/40-suspected-bandits-4-vigilantes-killed-as-security-forces-repel-attack-in-katsina/"}, {"type": "article", "title": "Gunmen kill three miners in fresh Plateau attack \u2014 Gunmen on Thursday killed three miners in a fresh attack al\u2026", "src": "rss", "date": "2026-07-30", "pol": -0.8, "url": "https://www.vanguardngr.com/2026/07/gunmen-kill-three-miners-in-fresh-plateau-attack/"}], "delta": {"w": -0.2, "m": -1.0, "y": null}, "spark": [43.3, 37.5, 39.9, 38.6, 39.3, 39.1, 38.9]}, {"key": "electricity", "name": "Electricity", "suppressed": true, "sentiment": null, "neg": null, "summary": null, "evidence": [], "delta": null, "spark": null}, {"key": "governance_corruption", "name": "Governance and corruption", "suppressed": false, "sentiment": 43.7, "neg": 22, "summary": "Negative sentiment (43.7/100). Most-discussed: anti corruption. Framed mainly as quality. 22% of 848 mentions negative.", "evidence": [{"type": "youtube", "title": "An angry viewer comment from Osun \u2014 opens the source thread", "src": "youtube", "date": "2026-08-15", "pol": -0.8, "url": "https://www.youtube.com/watch?v=kydRwFTxEf0&lc=UgzNZAwAWbCapstd4dV4AaABAg"}, {"type": "youtube", "title": "An angry viewer comment from Osun \u2014 opens the source thread", "src": "youtube", "date": "2026-08-07", "pol": -0.8, "url": "https://www.youtube.com/watch?v=swiuEki5JWQ&lc=UgwgCvL2hc_Lpw-zzi14AaABAg"}, {"type": "article", "title": "ICPC Restructures Workforce, Aligns Personnel With Anti-Corruption Mandate \u2014 The Independent Corrupt Practices\u2026", "src": "rss", "date": "2026-08-18", "pol": -0.8, "url": "https://leadership.ng/icpc-restructures-workforce-aligns-personnel-with-anti-corruption-mandate/"}], "delta": {"w": 1.4, "m": -3.6, "y": null}, "spark": [41.2, 47.9, 42.2, 46.0, 42.9, 44.3]}, {"key": "food_agriculture", "name": "Food and agriculture", "suppressed": true, "sentiment": null, "neg": null, "summary": null, "evidence": [], "delta": null, "spark": null}, {"key": "fuel_oil_gas", "name": "Fuel, oil and gas", "suppressed": false, "sentiment": 47.8, "neg": 10, "summary": "Mixed sentiment (47.8/100). Most-discussed: subsidy. Framed mainly as affordability. 10% of 761 mentions negative.", "evidence": [{"type": "youtube", "title": "An angry viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-08-21", "pol": -0.8, "url": "https://www.youtube.com/watch?v=uZrPjHxRX3o&lc=UgyQidUkbDC_O8mKRr94AaABAg"}, {"type": "youtube", "title": "A positive viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-08-23", "pol": 0.8, "url": "https://www.youtube.com/watch?v=laeAHumOYrs&lc=UgzXtnk1fmSt-valh3F4AaABAg"}, {"type": "youtube", "title": "A positive viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-08-26", "pol": 0.8, "url": "https://www.youtube.com/watch?v=Lu6htaAyZSE&lc=UgxUPIla6ULgT7Sl7R94AaABAg"}], "delta": {"w": 0.6, "m": -2.1, "y": null}, "spark": [49.8, 50.0, 50.5, 49.5, 47.3, 47.9]}, {"key": "roads_transport", "name": "Roads and transportation", "suppressed": true, "sentiment": null, "neg": null, "summary": null, "evidence": [], "delta": null, "spark": null}, {"key": "health", "name": "Health", "suppressed": true, "sentiment": null, "neg": null, "summary": null, "evidence": [], "delta": null, "spark": null}, {"key": "education", "name": "Education", "suppressed": true, "sentiment": null, "neg": null, "summary": null, "evidence": [], "delta": null, "spark": null}, {"key": "water_sanitation", "name": "Water and sanitation", "suppressed": false, "sentiment": 47.6, "neg": 16, "summary": "Mixed sentiment (47.6/100). Most-discussed: waste. Framed mainly as affordability. 16% of 217 mentions negative.", "evidence": [{"type": "youtube", "title": "A positive viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-08-07", "pol": 0.8, "url": "https://www.youtube.com/watch?v=KAfztBCjuPg&lc=Ugx1ZlwH6Pg95XG27at4AaABAg"}, {"type": "article", "title": "FCT landlords, business owners demand action over worsening Abuja floods \u2014 FCT landlords and business owners d\u2026", "src": "rss", "date": "2026-08-19", "pol": -0.7, "url": "https://punchng.com/fct-landlords-business-owners-demand-action-over-worsening-abuja-floods/?utm_source=rss.punchng.com&utm_medium=web"}, {"type": "article", "title": "Two die in refuse dump collapse \u2014 Two persons have been confirmed dead following the collapse of a refuse dump\u2026", "src": "rss", "date": "2026-08-29", "pol": -0.7, "url": "https://punchng.com/two-die-in-refuse-dump-collapse/?utm_source=rss.punchng.com&utm_medium=web"}], "delta": {"w": 4.6, "m": -3.0, "y": null}, "spark": [49.8, 51.2, 50.8, 47.2, 43.6, 48.2]}, {"key": "politics_elections", "name": "Politics and elections", "suppressed": false, "sentiment": 51.9, "neg": 7, "summary": "Mixed sentiment (51.9/100). Most-discussed: inec elections. Framed mainly as safety. 7% of 4500 mentions negative.", "evidence": [{"type": "youtube", "title": "An angry viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-09-01", "pol": -0.8, "url": "https://www.youtube.com/watch?v=ttVOpNhFDmI&lc=Ugz5OkEiD7fExCW7EON4AaABAg"}, {"type": "youtube", "title": "An angry viewer comment \u2014 opens the source thread", "src": "youtube", "date": "2026-08-02", "pol": -0.8, "url": "https://www.youtube.com/watch?v=V5_Op49ol8o&lc=Ugwo2NTI0ZCGb1jV6np4AaABAg"}, {"type": "article", "title": "Coalition Politics: Who Is Better Positioned Organisationally For 2027? \u2014 APC governors have publicly reaffirm\u2026", "src": "rss", "date": "2026-08-29", "pol": 0.8, "url": "https://www.channelstv.com/2026/08/29/coalition-politics-who-is-better-positioned-organisationally-for-2027/"}], "delta": {"w": 1.8, "m": 1.4, "y": null}, "spark": [51.0, 49.9, 50.7, 51.6, 50.8, 50.3, 52.1]}], "has_movement": true, "states": {"metrics": [{"key": "overall", "label": "Overall mood"}, {"key": "security", "label": "Insecurity"}, {"key": "economy_cost_of_living", "label": "Cost of living"}, {"key": "electricity", "label": "Power"}, {"key": "governance_corruption", "label": "Governance"}, {"key": "jobs_income", "label": "Jobs & income"}, {"key": "fuel_oil_gas", "label": "Fuel & energy"}], "zones": [{"key": "NW", "name": "North-West", "wide": false, "states": [{"code": "NG-JI", "name": "Jigawa", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-KD", "name": "Kaduna", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-KN", "name": "Kano", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-KT", "name": "Katsina", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-KE", "name": "Kebbi", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-SO", "name": "Sokoto", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-ZA", "name": "Zamfara", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}]}, {"key": "NE", "name": "North-East", "wide": false, "states": [{"code": "NG-AD", "name": "Adamawa", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-BA", "name": "Bauchi", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-BO", "name": "Borno", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-GO", "name": "Gombe", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-TA", "name": "Taraba", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-YO", "name": "Yobe", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}]}, {"key": "NC", "name": "North-Central", "wide": true, "states": [{"code": "NG-BE", "name": "Benue", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-Kog", "name": "Kogi", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-KW", "name": "Kwara", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-NA", "name": "Nasarawa", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-NI", "name": "Niger", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-PL", "name": "Plateau", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-FC", "name": "Federal Capital Territory", "values": {"overall": 50.3, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}]}, {"key": "SW", "name": "South-West", "wide": false, "states": [{"code": "NG-EK", "name": "Ekiti", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-LA", "name": "Lagos", "values": {"overall": 48.4, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-OG", "name": "Ogun", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-ON", "name": "Ondo", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-OS", "name": "Osun", "values": {"overall": 50.9, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-OY", "name": "Oyo", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}]}, {"key": "SE", "name": "South-East", "wide": false, "states": [{"code": "NG-AB", "name": "Abia", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-AN", "name": "Anambra", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-EB", "name": "Ebonyi", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-EN", "name": "Enugu", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-IM", "name": "Imo", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}]}, {"key": "SS", "name": "South-South", "wide": true, "states": [{"code": "NG-AK", "name": "Akwa Ibom", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-BY", "name": "Bayelsa", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-CR", "name": "Cross River", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-DE", "name": "Delta", "values": {"overall": null, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-ED", "name": "Edo", "values": {"overall": 49.4, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}, {"code": "NG-RI", "name": "Rivers", "values": {"overall": 46.5, "security": null, "economy_cost_of_living": null, "electricity": null, "governance_corruption": null, "jobs_income": null, "fuel_oil_gas": null}}]}], "national": 48.0}};</script><script>
+(function(){
+  var CSS=getComputedStyle(document.documentElement);
+  function tok(n){return CSS.getPropertyValue(n).trim();}
+  var D=window.DATA;
+  function esc(s){return (s==null?'':String(s)).replace(/[&<>"]/g,function(c){return {'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+  function moodColor(v){if(v==null)return tok('--muted');if(v>=75)return tok('--m-vpositive');if(v>=60)return tok('--m-positive');if(v>=45)return tok('--m-mixed');if(v>=35)return tok('--m-concern');if(v>=20)return tok('--m-negative');return tok('--m-distress');}
+  function moodLabel(v){return v>=75?'Very positive':v>=60?'Positive':v>=45?'Mixed':v>=35?'Concerned':v>=20?'Negative':'Highly distressed';}
+
+  /* theme */
+  var root=document.documentElement, tbtn=document.getElementById('theme');
+  try{var sv=localStorage.getItem('ci-theme');if(sv)root.setAttribute('data-theme',sv);}catch(e){}
+  function eff(){var t=root.getAttribute('data-theme');if(t)return t;return (matchMedia&&matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';}
+  tbtn.addEventListener('click',function(){var n=eff()==='dark'?'light':'dark';root.setAttribute('data-theme',n);try{localStorage.setItem('ci-theme',n);}catch(e){}drawTrend();});
+
+  /* evidence */
+  function evBadge(t){var m={article:['Article','ev-art'],youtube:['YouTube','ev-yt'],comment:['Comment','ev-com'],web:['Web','ev-web']};var x=m[t]||m.web;return '<span class="ev-badge '+x[1]+'">'+x[0]+'</span>';}
+  function evHTML(list){
+    if(!list||!list.length)return '';
+    var rows=list.map(function(e){var pc=e.pol>=0?'pos':'neg',pol=(e.pol>=0?'+':'')+Number(e.pol).toFixed(1);
+      return '<div class="ev">'+evBadge(e.type)+'<div class="ev-body"><a class="ev-title" href="'+esc(e.url)+'" target="_blank" rel="noopener">'+esc(e.title)+' <span class="ev-ext">&#8599;</span></a><div class="ev-meta">'+esc(e.src)+(e.date?' &middot; '+esc(e.date):'')+' &middot; <span class="ev-pol '+pc+'">'+pol+'</span></div></div></div>';}).join('');
+    return '<div class="ev-head">Evidence &mdash; recent sources behind this</div><div class="ev-list">'+rows+'</div><div class="ev-note">Articles link to the original; individual comments are described from their tone and location (never quoted) and link to the parent thread, to protect authors.</div>';
+  }
+
+  /* complaints */
+  var maxSev=Math.max.apply(null,D.complaints.map(function(c){return c.severity;}).concat([1]));
+  document.getElementById('cxlist').innerHTML=D.complaints.map(function(c,i){
+    var chips=c.driven_by&&c.driven_by.length?'<span class="chip-label">Driven by</span>'+c.driven_by.map(function(x){return '<span class="chip">'+esc(x)+'</span>';}).join(''):'';
+    return '<div class="cx'+(i===0?' open':'')+'"><button class="cx-btn" type="button" aria-expanded="'+(i===0)+'">'
+      +'<div class="cx-row"><span class="cx-rank">'+(i+1)+'</span><span class="cx-name">'+esc(c.name)+'</span><span class="cx-sev">'+c.severity+'</span>'
+      +'<svg class="cx-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></div>'
+      +'<div class="cx-bar"><i style="width:'+Math.round(c.severity/maxSev*100)+'%"></i></div></button>'
+      +'<div class="cx-detail"><div class="cx-detail-in"><div class="cx-drow">'+chips+'</div>'+evHTML(c.evidence)+'</div></div></div>';
+  }).join('');
+
+  /* highlights */
+  var hlEl=document.getElementById('hllist');
+  if(D.highlights&&D.highlights.length){
+    hlEl.innerHTML=D.highlights.map(function(h){return '<div class="hl"><div class="htop"><span class="hcat">'+esc(h.cat)+'</span></div><h3>'+esc(h.title)+'</h3><p>'+esc(h.text)+'</p></div>';}).join('');
+  } else {
+    hlEl.innerHTML='<div class="hl" style="border-left-color:var(--muted)"><p>No category cleared a clearly-positive reading this period. This index tracks public issues, so highlights appear when an issue turns net-positive.</p></div>';
+  }
+
+  /* complaints disclosure (rendered once) */
+  document.querySelectorAll('.cx-btn').forEach(function(b){
+    b.addEventListener('click',function(){var row=b.closest('.cx'),open=row.classList.toggle('open');b.setAttribute('aria-expanded',open?'true':'false');});
+  });
+
+  /* categories + movers + history */
+  var PLABEL={w:'this week',m:'this month',y:'this year'};
+  function fmtD(x){return (x>0?'+':'')+Number(x).toFixed(1);}
+  function spark(arr,w,h,color){
+    var mn=Math.min.apply(null,arr),mx=Math.max.apply(null,arr),rg=(mx-mn)||1,n=arr.length,pad=2;
+    var pts=arr.map(function(v,i){var x=pad+(w-2*pad)*(n<2?0.5:i/(n-1));var y=pad+(h-2*pad)*(1-(v-mn)/rg);return x.toFixed(1)+','+y.toFixed(1);});
+    var last=pts[pts.length-1].split(',');
+    return '<svg viewBox="0 0 '+w+' '+h+'" preserveAspectRatio="none" style="width:100%;height:100%"><polyline points="'+pts.join(' ')+'" fill="none" stroke="'+color+'" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/><circle cx="'+last[0]+'" cy="'+last[1]+'" r="1.9" fill="'+color+'"/></svg>';
+  }
+  var curP='w';
+  function catDelta(c){return (c.delta&&c.delta[curP]!=null)?c.delta[curP]:null;}
+  function renderCats(){
+    var ctl=document.getElementById('catctl'), mv=document.getElementById('movers');
+    if(D.has_movement){
+      ctl.innerHTML='<span style="font-size:.78rem;color:var(--muted);font-weight:600">Change over</span>'
+        +'<div class="seg" id="periodseg"><button data-p="w" class="'+(curP==='w'?'on':'')+'">Week</button><button data-p="m" class="'+(curP==='m'?'on':'')+'">Month</button><button data-p="y" class="'+(curP==='y'?'on':'')+'">Year</button></div>';
+      var movable=D.categories.filter(function(c){return !c.suppressed&&catDelta(c)!=null;});
+      var sorted=movable.slice().sort(function(a,b){return catDelta(b)-catDelta(a);});
+      var imp=sorted.filter(function(c){return catDelta(c)>0.05;}).slice(0,4);
+      var wor=sorted.filter(function(c){return catDelta(c)<-0.05;}).slice(-4).reverse();
+      function moverRow(c,col){return '<div class="mrow"><span class="mname">'+esc(c.name)+'</span><span class="mspark">'+(c.spark&&c.spark.length>1?spark(c.spark,64,20,col):'')+'</span><span class="mdelta">'+fmtD(catDelta(c))+'</span></div>';}
+      function col(cls,label,items,color,empty){return '<div class="mcol '+cls+'"><h3>'+label+' <span style="color:var(--muted);font-weight:600;text-transform:none;letter-spacing:0">'+PLABEL[curP]+'</span></h3>'+(items.length?items.map(function(c){return moverRow(c,color);}).join(''):'<div class="mrow"><span class="mname" style="color:var(--muted)">'+empty+'</span></div>')+'</div>';}
+      mv.innerHTML='<div class="movers">'+col('imp','&#9650; Improving',imp,tok('--pos'),'No gains this period')+col('wor','&#9660; Worsening',wor,tok('--grievance'),'No declines this period')+'</div>';
+    } else {
+      ctl.innerHTML='<span class="tag">week/month/year movement building</span>';
+      mv.innerHTML='';
+    }
+    document.getElementById('catlist').innerHTML=D.categories.map(function(c){
+      if(c.suppressed){
+        return '<div class="cat"><div class="cat-btn" style="cursor:default"><div class="cat-row"><span class="cat-dot" style="background:var(--muted)"></span><span class="cat-name">'+esc(c.name)+'</span><span class="cat-sent" style="width:auto;color:var(--muted);font-weight:600;font-size:.8rem">withheld</span></div><div class="cat-summary">Withheld &mdash; not enough representative data to publish a figure this period.</div></div></div>';
+      }
+      var dv=catDelta(c), dh='';
+      if(dv!=null){var cls=dv>0.15?'up':dv<-0.15?'dn':'flat',ar=dv>0.15?'▲':dv<-0.15?'▼':'—';dh='<span class="cat-delta '+cls+'">'+ar+' '+fmtD(dv)+'</span>';}
+      return '<div class="cat"><button class="cat-btn" type="button" aria-expanded="false"><div class="cat-row">'
+        +'<span class="cat-dot" style="background:'+moodColor(c.sentiment)+'"></span>'
+        +'<span class="cat-name">'+esc(c.name)+'</span>'+dh
+        +'<span class="cat-sent">'+c.sentiment+'</span>'
+        +'<svg class="cat-caret" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg></div>'
+        +'<div class="cat-summary">'+esc(c.summary)+'</div></button>'
+        +'<div class="cat-detail"><div class="cat-detail-in">'
+        +'<div class="splitbar"><span class="neg" style="width:'+c.neg+'%"></span><span class="pos" style="width:'+(100-c.neg)+'%"></span></div>'
+        +'<div class="splitlab"><span>'+c.neg+'% negative</span><span>'+(100-c.neg)+'% positive</span></div>'
+        +evHTML(c.evidence)+'</div></div></div>';
+    }).join('');
+    document.querySelectorAll('#catlist button.cat-btn').forEach(function(b){
+      b.addEventListener('click',function(){var row=b.closest('.cat'),open=row.classList.toggle('open');b.setAttribute('aria-expanded',open?'true':'false');});
+    });
+  }
+  document.addEventListener('click',function(e){var b=e.target.closest('#periodseg button');if(!b)return;curP=b.dataset.p;renderCats();});
+  renderCats();
+
+  /* states */
+  var curMetric='overall', selCode=null;
+  var byCode={}; D.states.zones.forEach(function(z){z.states.forEach(function(s){byCode[s.code]={name:s.name,zone:z.name,values:s.values};});});
+  D.states.zones.some(function(z){return z.states.some(function(s){if(s.values.overall!=null){selCode=s.code;return true;}return false;});});
+  function renderStates(){
+    document.getElementById('zones').innerHTML=D.states.zones.map(function(z){
+      var vals=z.states.map(function(s){return s.values[curMetric];}).filter(function(v){return v!=null;});
+      var avg=vals.length?Math.round(vals.reduce(function(a,b){return a+b;},0)/vals.length):null;
+      var tiles=z.states.map(function(s){var v=s.values[curMetric];
+        if(v==null)return '<span class="tile" style="background:var(--surface-2);color:var(--muted);border-style:dashed;text-shadow:none;cursor:default" title="'+esc(s.name)+': withheld"><span class="tc">'+esc(s.name)+'</span><span class="tv" style="background:transparent">&mdash;</span></span>';
+        return '<button class="tile'+(s.code===selCode?' sel':'')+'" data-code="'+s.code+'" style="background:'+moodColor(v)+'" title="'+esc(s.name)+': '+v+'"><span class="tc">'+esc(s.name)+'</span><span class="tv">'+v+'</span></button>';}).join('');
+      return '<div class="zone'+(z.wide?' wide':'')+'"><h4><span>'+esc(z.name)+'</span><span style="color:var(--ink-2)">'+(avg!=null?'avg '+avg:'&mdash;')+'</span></h4><div class="tiles">'+tiles+'</div></div>';
+    }).join('');
+    document.querySelectorAll('#zones .tile[data-code]').forEach(function(t){t.addEventListener('click',function(){selCode=t.dataset.code;renderStates();});});
+    renderStDetail();
+  }
+  function renderStDetail(){
+    var el=document.getElementById('stdetail');
+    if(!selCode||!byCode[selCode]){el.innerHTML='<p class="sec-note" style="margin:0">No state has enough data to show a breakdown yet.</p>';return;}
+    var st=byCode[selCode], ov=st.values.overall;
+    var cats=D.states.metrics.filter(function(m){return m.key!=='overall';}).map(function(m){return {k:m.label,v:st.values[m.key]};}).filter(function(x){return x.v!=null;});
+    cats.sort(function(a,b){return a.v-b.v;});
+    var worst=cats.slice(0,3), best=cats.slice(-3).reverse();
+    function rows(a){return a.length?a.map(function(c){return '<li><span>'+esc(c.k)+'</span><span class="v">'+c.v+'</span></li>';}).join(''):'<li><span style="color:var(--muted)">no figures cleared the gate</span></li>';}
+    var head='<div class="std-head"><div><div class="std-name">'+esc(st.name)+'</div><div class="std-zone">'+esc(st.zone)+' zone</div></div>';
+    if(ov!=null){var diff=ov-D.states.national,up=diff>=0;
+      head+='<div style="text-align:right"><div class="std-score" style="color:'+moodColor(ov)+'">'+ov+'</div><div class="std-band">'+moodLabel(ov)+' &middot; <span class="'+(up?'up':'dn')+'">'+(up?'+':'')+diff.toFixed(1)+' vs national</span></div></div>';
+    } else { head+='<div style="text-align:right;color:var(--muted);font-size:.85rem">overall withheld</div>'; }
+    head+='</div>';
+    el.innerHTML=head+'<div class="std-cols"><div><h5 class="cw">Top concerns</h5><ul class="stlist neg">'+rows(worst)+'</ul></div><div><h5 class="cb">Bright spots</h5><ul class="stlist pos">'+rows(best)+'</ul></div></div>';
+  }
+  var msel=document.getElementById('metricsel');
+  msel.innerHTML=D.states.metrics.map(function(m){return '<option value="'+m.key+'">'+esc(m.label)+'</option>';}).join('');
+  msel.addEventListener('change',function(){curMetric=this.value;renderStates();});
+
+  /* trend chart */
+  var wrap=document.getElementById('trendwrap'), tip=document.getElementById('trendtip'), curRange='1w';
+  var S=(D.trend&&D.trend.series)||[];
+  function fmtDate(t){var d=new Date(t+'T00:00:00');return d.getDate()+' '+d.toLocaleDateString('en-GB',{month:'short'});}
+  function getRange(key){
+    if(S.length<2)return null;
+    var arr;
+    if(key==='1w')arr=S.slice(-7);
+    else if(key==='1m')arr=S.slice(-30);
+    else if(key==='1q'){var q=S.slice(-91),st=Math.max(1,Math.round(q.length/13));arr=q.filter(function(_,i){return i%st===0||i===q.length-1;});}
+    else {var y=S.slice(-365),st2=Math.max(1,Math.round(y.length/12));arr=y.filter(function(_,i){return i%st2===0||i===y.length-1;});}
+    return {pts:arr.map(function(p){return p.score;}),labs:arr.map(function(p){return fmtDate(p.t);})};
+  }
+  function drawTrend(){
+    var d=getRange(curRange);
+    var seg=document.getElementById('rangeseg');
+    if(!d){wrap.innerHTML='<div style="padding:24px 4px;color:var(--muted);font-size:.9rem">The mood trend appears here once a few days of readings have accumulated.</div>';wrap.appendChild(tip);if(seg)seg.style.opacity=.5;return;}
+    if(seg)seg.style.opacity=1;
+    var data=d.pts, labs=d.labs, n=data.length;
+    var W=wrap.clientWidth||640, H=Math.max(190,Math.min(240,W*0.34));
+    var padL=8,padR=10,padT=16,padB=26, pw=W-padL-padR, ph=H-padT-padB;
+    var mn=Math.min.apply(null,data), mx=Math.max.apply(null,data);
+    var lo=Math.floor(mn-2), hi=Math.ceil(mx+2); if(hi<=lo)hi=lo+1;
+    var accent=tok('--accent'), gridc=tok('--grid'), muted=tok('--muted'), inkc=tok('--ink');
+    function X(i){return padL+pw*(n<2?0.5:i/(n-1));}
+    function Y(v){return padT+ph*(1-(v-lo)/(hi-lo));}
+    var xs=data.map(function(_,i){return X(i);}), ys=data.map(function(v){return Y(v);});
+    var gl='',yl=''; [lo,(lo+hi)/2,hi].forEach(function(gv){var y=Y(gv);gl+='<line x1="'+padL+'" y1="'+y.toFixed(1)+'" x2="'+(W-padR)+'" y2="'+y.toFixed(1)+'" stroke="'+gridc+'" stroke-width="1"/>';yl+='<text x="'+(W-padR)+'" y="'+(y-4).toFixed(1)+'" text-anchor="end" font-size="11" fill="'+muted+'" font-family="Public Sans,sans-serif">'+Math.round(gv)+'</text>';});
+    var step=Math.max(1,Math.ceil(n/7)), xl='';
+    labs.forEach(function(l,i){if(i%step!==0&&i!==n-1)return;var x=X(i);xl+='<text x="'+x.toFixed(1)+'" y="'+(H-8)+'" text-anchor="middle" font-size="11" fill="'+muted+'" font-family="Public Sans,sans-serif">'+esc(l)+'</text>';});
+    var line=xs.map(function(x,i){return x.toFixed(1)+','+ys[i].toFixed(1);}).join(' ');
+    var area='M'+padL+','+(padT+ph)+' L'+line.replace(/ /g,' L')+' L'+(padL+pw)+','+(padT+ph)+' Z';
+    var svg='<svg viewBox="0 0 '+W+' '+H+'" width="'+W+'" height="'+H+'">'
+      +'<defs><linearGradient id="tg" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="'+accent+'" stop-opacity="0.18"/><stop offset="1" stop-color="'+accent+'" stop-opacity="0"/></linearGradient></defs>'
+      +gl+yl+xl+'<path d="'+area+'" fill="url(#tg)"/>'
+      +'<polyline points="'+line+'" fill="none" stroke="'+accent+'" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/>'
+      +'<line id="cross" x1="0" y1="'+padT+'" x2="0" y2="'+(padT+ph)+'" stroke="'+inkc+'" stroke-width="1" opacity="0"/>'
+      +'<circle id="cdot" r="4.5" fill="'+accent+'" stroke="'+tok('--surface')+'" stroke-width="2" opacity="0"/>'
+      +'<circle cx="'+xs[n-1].toFixed(1)+'" cy="'+ys[n-1].toFixed(1)+'" r="3.4" fill="'+accent+'"/>'
+      +'<rect id="cap" x="'+padL+'" y="'+padT+'" width="'+pw+'" height="'+ph+'" fill="transparent"/></svg>';
+    wrap.innerHTML=svg; wrap.appendChild(tip);
+    var cap=wrap.querySelector('#cap'), cross=wrap.querySelector('#cross'), cdot=wrap.querySelector('#cdot');
+    function at(clientX){var r=wrap.getBoundingClientRect();var rel=(clientX-r.left)*(W/r.width);var i=Math.round((rel-padL)/pw*(n-1));i=Math.max(0,Math.min(n-1,i));
+      cross.setAttribute('x1',xs[i]);cross.setAttribute('x2',xs[i]);cross.setAttribute('opacity','.3');
+      cdot.setAttribute('cx',xs[i]);cdot.setAttribute('cy',ys[i]);cdot.setAttribute('opacity','1');
+      tip.style.opacity='1';tip.style.left=(xs[i]/W*r.width)+'px';tip.style.top=(ys[i]/H*r.height)+'px';
+      tip.innerHTML='<div>'+data[i].toFixed(1)+' <span class="t-sub">&middot; '+moodLabel(data[i])+'</span></div><div class="t-sub">'+esc(labs[i])+'</div>';}
+    function leave(){cross.setAttribute('opacity','0');cdot.setAttribute('opacity','0');tip.style.opacity='0';}
+    cap.addEventListener('mousemove',function(e){at(e.clientX);});
+    cap.addEventListener('mouseleave',leave);
+    cap.addEventListener('touchstart',function(e){at(e.touches[0].clientX);},{passive:true});
+    cap.addEventListener('touchmove',function(e){at(e.touches[0].clientX);},{passive:true});
+  }
+  var rseg=document.getElementById('rangeseg');
+  if(rseg)rseg.addEventListener('click',function(e){var b=e.target.closest('button');if(!b)return;this.querySelectorAll('button').forEach(function(x){x.classList.remove('on');});b.classList.add('on');curRange=b.dataset.range;drawTrend();});
+
+  /* hero week-over-week delta from series */
+  (function(){var el=document.getElementById('wow');if(!el)return;
+    if(S.length<2){el.style.display='none';return;}
+    var last=S[S.length-1].score, prev=S.length>=8?S[S.length-8].score:S[0].score, wc=last-prev, up=wc>=0;
+    el.className='delta '+(up?'up':'dn');
+    el.innerHTML='<svg width="10" height="10" viewBox="0 0 10 10" fill="currentColor" aria-hidden="true"><path d="'+(up?'M5 2l4 5H1z':'M5 8L1 3h8z')+'"/></svg> '+Math.abs(wc).toFixed(1)+(S.length>=8?' vs last week':' since first reading');
+  })();
+
+  /* page router */
+  var links=[].slice.call(document.querySelectorAll('nav.jump a'));
+  var views={mood:document.getElementById('view-mood'),state:document.getElementById('view-state'),data:document.getElementById('view-data')};
+  function showView(v){Object.keys(views).forEach(function(k){if(views[k])views[k].hidden=(k!==v);});links.forEach(function(a){a.classList.toggle('active',a.getAttribute('data-view')===v);});window.scrollTo(0,0);if(v==='mood')drawTrend();}
+  links.forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();showView(a.getAttribute('data-view'));});});
+
+  /* init */
+  renderStates(); drawTrend();
+  var rt; window.addEventListener('resize',function(){clearTimeout(rt);rt=setTimeout(drawTrend,150);});
+})();
+</script></body></html>
